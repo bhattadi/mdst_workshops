@@ -68,9 +68,9 @@ def part4a(filename, username, password):
     """
     file = open(filename, "wb")
 
-    username_bytes = username.encode('ascii')
-    encryptedusername = base64.b64encode(username_bytes)
-    password_bytes = password.encode('ascii')
+    username_bytes = (username).encode('ascii')
+    encryptedusername = base64.b64encode(username_bytes) + '\r\n'.encode('ascii')
+    password_bytes = (password).encode('ascii')
     encryptedpassword = base64.b64encode(password_bytes)
 
     file.write(encryptedusername)
